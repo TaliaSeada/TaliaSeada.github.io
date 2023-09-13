@@ -80,6 +80,13 @@ input, select, textarea {
 
 	body {
 		-ms-overflow-style: scrollbar;
+		.main-font {
+			font-family: "Merriweather", Georgia, serif;
+		}
+		.text-white {
+			color: white;
+		}
+
 	}
 
 	@media screen and (max-width: 480px) {
@@ -2835,6 +2842,7 @@ input, select, textarea {
 		}
 
 		/* HERE */
+
 		.container {
 			max-width: 1200px;
 			padding: 1.5rem 1.5rem;
@@ -2939,7 +2947,7 @@ input, select, textarea {
 			bottom: 0;
 		}
 		.skills .seperator-skew-bottom svg .fill-white {
-			fill: black;
+			fill: white;
 		}
 		/* END */
 
