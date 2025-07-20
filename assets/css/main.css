@@ -2683,6 +2683,23 @@ input, select, textarea {
 			transform: scale(1.05);
 		}
 
+	.image-grid {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		justify-content: center;
+		margin-top: 1rem;
+	}
+
+	.image-grid img {
+		max-width: 100%;
+		width: 300px; /* adjust based on layout */
+		height: auto;
+		border-radius: 10px;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	}
+
+
 /* Actions */
 
 	ul.actions {
