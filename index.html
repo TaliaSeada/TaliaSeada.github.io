@@ -23,12 +23,12 @@
       <!-- Intro -->
       <div id="intro">
         <h1>Talia Seada</h1>
-        <h2>Data Scientist | ML and AI Developer | Researcher</h2>
+        <h2>Data Scientist | Researcher</h2>
         <p>
-          I am an MSc student in Software and Information Systems Engineering specializing in AI. Currently researching Hebrew LLM evaluation metrics as part of my thesis work on stance detection.   
-          Former LLM Research Assistant at Ariel University with strong teamwork and problem-solving skills.  </br>
-          I actively volunteer with Code for Israel, contributing to tech-driven social impact initiatives. </br>
-          <b>Seeking a student position in the data science field where I can apply my expertise and experience.</b>
+          I am a data scientist with a strong background in machine learning and artificial intelligence, 
+          passionate about leveraging data to drive insights and innovation. I am currently an MSc student 
+          in Software and Information Systems Engineering specializing in AI, researching Hebrew LLM evaluation 
+          metrics as part of my thesis work on stance detection.
         </p>
         <ul class="actions">
           <li>
@@ -145,7 +145,115 @@
             <header>
               <h2>
                 <a
-                  href="https://drive.google.com/file/d/1e99-1t6WmSpiom-qhJ-6muGFMD7z2ptJ/view?usp=sharing"
+                  href=""
+                  >Fasting prediction model, Assuta Ashdod<br />
+                </a>
+              </h2>
+            </header>
+            <a class="image fit"><img src="images/pipeline.png" alt="" /></a>
+            <p>
+            Using a dataset of patients from Assuta Ashdod Hospital, we applied prompt-engineering techniques with Jinja 
+            to build a model that predicts whether a patient will be fasting at the time of their next meal, in order to 
+            support accurate meal preparation. The work was conducted in the Briya Research Room at Assuta Ashdod Hospital, 
+            using the Ollama client to run large language models on a local server.
+            </p>
+            <!-- <ul class="actions special">
+              <li>
+                <a
+                  href="https://drive.google.com/file/d/19yQtG61WD88TGnQXJ1FgM3Uvmw-WILA4/view"
+                  class="button"
+                  >View Project</a
+                >
+              </li>
+            </ul> -->
+          </article> 
+
+          <article>
+            <header>
+              <h2>
+                <a
+                  href="https://github.com/mlaia/Offra/tree/main"
+                  >Synthetic Data Generator<br />
+                </a>
+              </h2>
+            </header>
+            <a class="image fit"><img src="images/syntheticData.png" alt="" /></a>
+            <p>
+            Based on a query given to the patients using prompt engineering techniques we built a synthetic data generator 
+            for the risk of breast cancer classifier on GCP using vertex AI.
+            </p>
+            <!-- <ul class="actions special">
+              <li>
+                <a
+                  href="https://drive.google.com/file/d/19yQtG61WD88TGnQXJ1FgM3Uvmw-WILA4/view"
+                  class="button"
+                  >View Project</a
+                >
+              </li>
+            </ul> -->
+          </article>  
+
+           <article>
+            <header>
+              <h2>
+                <a
+                  href="https://github.com/mlaia/Offra/tree/main"
+                  >Breast cancer risk classifier<br />
+                </a>
+              </h2>
+            </header>
+            <a class="image fit"><img src="images/explainer.png" alt="" /></a>
+            <p>
+            
+            We used the data we generated with the synthetic data generator we built and preprocessed it to build a classifier that predicts whether a patient is at risk of breast cancer or not. 
+            Since our data is synthetic, we added calculated masking to mimic real data.
+            After that, we built the cancer risk classifier and the <a href="https://explainerdashboard-76990910422.europe-west1.run.app/">Explainer dashboard</a> for explainability.
+
+            </p>
+            <!-- <ul class="actions special">
+              <li>
+                <a
+                  href="https://drive.google.com/file/d/19yQtG61WD88TGnQXJ1FgM3Uvmw-WILA4/view"
+                  class="button"
+                  >View Project</a
+                >
+              </li>
+            </ul> -->
+          </article>  
+
+           <article>
+            <header>
+              <h2>
+                <a
+                  href="https://github.com/mlaia/Offra_plan_GPRO/blob/main"
+                  >Care Planner: System for generating plans for patients who are at risk of breast cancer <br />
+                </a>
+              </h2>
+            </header>
+            <a class="image fit"><img src="images/demo.png" alt="" /></a>
+            <p>
+            For this model we implemented the following paper, <a href="https://arxiv.org/abs/2510.08191">Training-Free Group Relative Policy Optimization</a>
+            It runs on the Cloud Run of GCP.
+            Connected to the Firestore database to save notes from doctors and already generated plans.
+            As part of this whole system we implemented an anonymizer for the clinical data we use.
+            </p>
+            <!-- <ul class="actions special">
+              <li>
+                <a
+                  href="https://drive.google.com/file/d/19yQtG61WD88TGnQXJ1FgM3Uvmw-WILA4/view"
+                  class="button"
+                  >View Project</a
+                >
+              </li>
+            </ul> -->
+          </article> 
+
+
+          <article>
+            <header>
+              <h2>
+                <a
+                  href="https://github.com/TaliaSeada/EmoSketch"
                   >EmoSketch: A Multimodal Bot for Emotion Analysis in Children’s Drawings<br />
                 </a>
               </h2>
