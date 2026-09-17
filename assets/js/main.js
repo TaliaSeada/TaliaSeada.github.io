@@ -5,6 +5,91 @@
 */
 
 (function($) {
+	// AI network backdrop.
+		var aiNetworkCanvas = document.querySelector('#intro .ai-network');
+
+		if (aiNetworkCanvas) {
+			var networkContext = aiNetworkCanvas.getContext('2d');
+			var networkNodes = [];
+			var networkAnimationFrame;
+			var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+			var resizeNetwork = function() {
+				var networkWidth = aiNetworkCanvas.offsetWidth;
+				var networkHeight = aiNetworkCanvas.offsetHeight;
+				var pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+
+				aiNetworkCanvas.width = networkWidth * pixelRatio;
+				aiNetworkCanvas.height = networkHeight * pixelRatio;
+				networkContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+
+				if (!networkNodes.length) {
+					var nodeCount = networkWidth < 600 ? 18 : 30;
+
+					for (var nodeIndex = 0; nodeIndex < nodeCount; nodeIndex++) {
+						networkNodes.push({
+							x: Math.random() * networkWidth,
+							y: Math.random() * networkHeight,
+							directionX: (Math.random() - 0.5) * 0.18,
+							directionY: (Math.random() - 0.5) * 0.18,
+							radius: 1.5 + Math.random() * 2
+						});
+					}
+				}
+			};
+
+			var drawNetwork = function() {
+				var networkWidth = aiNetworkCanvas.offsetWidth;
+				var networkHeight = aiNetworkCanvas.offsetHeight;
+				networkContext.clearRect(0, 0, networkWidth, networkHeight);
+
+				for (var firstIndex = 0; firstIndex < networkNodes.length; firstIndex++) {
+					var firstNode = networkNodes[firstIndex];
+
+					for (var secondIndex = firstIndex + 1; secondIndex < networkNodes.length; secondIndex++) {
+						var secondNode = networkNodes[secondIndex];
+						var distanceX = firstNode.x - secondNode.x;
+						var distanceY = firstNode.y - secondNode.y;
+						var distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+
+						if (distance < 175) {
+							networkContext.beginPath();
+							networkContext.moveTo(firstNode.x, firstNode.y);
+							networkContext.lineTo(secondNode.x, secondNode.y);
+							networkContext.strokeStyle = 'rgba(125, 77, 93, ' + (0.16 * (1 - distance / 175)) + ')';
+							networkContext.lineWidth = 1;
+							networkContext.stroke();
+						}
+					}
+
+					if (!reducedMotion) {
+						firstNode.x += firstNode.directionX;
+						firstNode.y += firstNode.directionY;
+
+						if (firstNode.x < -10 || firstNode.x > networkWidth + 10)
+							firstNode.directionX *= -1;
+						if (firstNode.y < -10 || firstNode.y > networkHeight + 10)
+							firstNode.directionY *= -1;
+					}
+
+					networkContext.beginPath();
+					networkContext.arc(firstNode.x, firstNode.y, firstNode.radius, 0, Math.PI * 2);
+					networkContext.fillStyle = 'rgba(201, 119, 147, 0.7)';
+					networkContext.fill();
+				}
+
+				if (!reducedMotion)
+					networkAnimationFrame = window.requestAnimationFrame(drawNetwork);
+			};
+
+			resizeNetwork();
+			drawNetwork();
+
+			$(window).on('resize.ai-network', function() {
+				resizeNetwork();
+			});
+		}
+
 
 	var	$window = $(window),
 		$body = $('body'),
