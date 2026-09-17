@@ -23,12 +23,12 @@
       <!-- Intro -->
       <div id="intro">
         <h1>Talia Seada</h1>
-        <h2>Data Scientist | Researcher</h2>
+        <h2>Data Scientist</h2>
         <p>
-          I am a data scientist with a strong background in machine learning and artificial intelligence, 
-          passionate about leveraging data to drive insights and innovation. I am currently an MSc student 
-          in Software and Information Systems Engineering specializing in AI, researching Hebrew LLM evaluation 
-          metrics as part of my thesis work on stance detection.
+          I am a Data Scientist with an MSc in Software and Information Systems Engineering, specializing in Artificial Intelligence. 
+          I have a strong background in machine learning, large language models, and data-driven solutions, 
+          with a passion for applying AI to real-world challenges. My MSc research focused on evaluating stance preservation in 
+          Hebrew and English text summarization and developing methods for measuring stance shifts in LLM-generated summaries.
         </p>
         <ul class="actions">
           <li>
@@ -96,51 +96,53 @@
 
       <!-- Main -->
       <div id="main">
-        <!-- Featured Post -->
-        <!-- <article class="post featured">
+        <!-- Featured Post --> 
+        <article class="post featured">
           <header class="major">
             <h1>Projects</h1>
             <hr />
             <h3>
               <a
-                href="https://github.com/TaliaSeada/Classifying_Interpersonal_Synchronization_States_Research"
+                href="https://drive.google.com/file/d/1V_mflxfXzt_LNU0tD5BEaBlS27IilWyS/view?usp=sharing"
               >
-                Classifying Interpersonal Synchronization States Research
+                StanceSum: A New Benchmark for Stance Preservation Summarization in English and Hebrew
               </a>
             </h3>
             <p>
-              In this project I collaborated with Dr. Roi Yozevitch from Ariel
-              University on a research, providing valuable contributions to both
-              the research and writing of a published article in Scientific
-              Reports of Nature Journal on "Classifying interpersonal
-              synchronization states using a data-driven approach: implications
-              for social interaction understanding".
+            As part of my MSc thesis, I developed StanceSum, a multilingual NLP benchmark and evaluation framework for measuring whether LLM-generated 
+            summaries preserve the stance and perspective expressed in the original text. The project focused on Hebrew and English and combined semantic 
+            sentence alignment, automatic topic detection, and stance classification to compare stance distributions between source documents and their 
+            summaries using Earth Mover’s Distance (EMD). I also developed a dedicated Hebrew stance detection model and created bilingual, sentence-level 
+            annotated resources for evaluating stance preservation. Our experiments showed that LLMs can produce fluent and factually consistent summaries 
+            while still changing the author’s stance—most commonly by softening opinions toward a neutral position—and that traditional metrics such as 
+            BLEU, ROUGE, and semantic similarity do not reliably capture these shifts.
             </p>
           </header>
-          <a class="image main"><img src="images/research.jpg" alt="" /></a> -->
-          <!-- <ul class="actions special">
-									<li><a href="https://github.com/TaliaSeada/Classifying_Interpersonal_Synchronization_States_Research" class="button large">View Project</a></li>
-								</ul> -->
-          <!-- <ul class="actions special">
-            <li>
-              <a
-                href="https://www.mako.co.il/news-science/2023_q3/Article-cb272a67115b981026.htm?sCh=31750a2610f26110&pId=173113802"
-                class="button large"
-                >Newspaper Article</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.nature.com/articles/s41598-023-37316-5"
-                class="button large"
-                >Article</a
-              >
-            </li>
-          </ul>
-        </article> -->
+          <a class="image main"><img src="images/thesis-demo.png" alt="" /></a>
+        </article>
 
         <!-- Posts -->
         <section class="posts">
+          <article>
+            <header>
+              <h2>
+                <a
+                  href=""
+                  >AI Care Assistant, TailorPath<br />
+                </a>
+              </h2>
+            </header>
+            <div class="project-pair">
+              <img src="images/tailor-app.png" alt="" />
+              <img src="images/tailor-web.png" alt="" />
+            </div>
+            <p>
+            TailorPath is a digital care-planning platform for patients, caregivers, and professionals. We developed an AI assistant using 
+            AWS Bedrock and RAG to provide context-aware, role-specific guidance throughout the platform. The assistant supports multilingual 
+            and accessible interactions across the web and mobile applications.
+            </p>
+          </article> 
+
           <article>
             <header>
               <h2>
@@ -157,15 +159,6 @@
             support accurate meal preparation. The work was conducted in the Briya Research Room at Assuta Ashdod Hospital, 
             using the Ollama client to run large language models on a local server.
             </p>
-            <!-- <ul class="actions special">
-              <li>
-                <a
-                  href="https://drive.google.com/file/d/19yQtG61WD88TGnQXJ1FgM3Uvmw-WILA4/view"
-                  class="button"
-                  >View Project</a
-                >
-              </li>
-            </ul> -->
           </article> 
 
           <article>
@@ -182,15 +175,6 @@
             Based on a query given to the patients using prompt engineering techniques we built a synthetic data generator 
             for the risk of breast cancer classifier on GCP using vertex AI.
             </p>
-            <!-- <ul class="actions special">
-              <li>
-                <a
-                  href="https://drive.google.com/file/d/19yQtG61WD88TGnQXJ1FgM3Uvmw-WILA4/view"
-                  class="button"
-                  >View Project</a
-                >
-              </li>
-            </ul> -->
           </article>  
 
            <article>
