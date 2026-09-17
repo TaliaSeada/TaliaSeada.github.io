@@ -8,6 +8,17 @@
 	// AI network backdrop.
 		var aiNetworkCanvas = document.querySelector('#intro .ai-network');
 
+		if (!aiNetworkCanvas) {
+			var networkWrapper = document.querySelector('#wrapper');
+
+			if (networkWrapper) {
+				aiNetworkCanvas = document.createElement('canvas');
+				aiNetworkCanvas.className = 'ai-network';
+				aiNetworkCanvas.setAttribute('aria-hidden', 'true');
+				networkWrapper.appendChild(aiNetworkCanvas);
+			}
+		}
+
 		if (aiNetworkCanvas) {
 			var networkContext = aiNetworkCanvas.getContext('2d');
 			var networkNodes = [];
@@ -24,7 +35,7 @@
 				networkContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
 
 				if (!networkNodes.length) {
-					var nodeCount = networkWidth < 600 ? 18 : 30;
+					var nodeCount = networkWidth < 600 ? 42 : 82;
 
 					for (var nodeIndex = 0; nodeIndex < nodeCount; nodeIndex++) {
 						networkNodes.push({
@@ -52,11 +63,11 @@
 						var distanceY = firstNode.y - secondNode.y;
 						var distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
 
-						if (distance < 175) {
+						if (distance < 220) {
 							networkContext.beginPath();
 							networkContext.moveTo(firstNode.x, firstNode.y);
 							networkContext.lineTo(secondNode.x, secondNode.y);
-							networkContext.strokeStyle = 'rgba(125, 77, 93, ' + (0.16 * (1 - distance / 175)) + ')';
+							networkContext.strokeStyle = 'rgba(125, 77, 93, ' + (0.2 * (1 - distance / 220)) + ')';
 							networkContext.lineWidth = 1;
 							networkContext.stroke();
 						}
